@@ -15,42 +15,59 @@ class DashBoardScreen extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return SafeArea(
-        child: SingleChildScrollView(
-      child: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(defaultPadding),
-            child: Header(),
-          ),
-          Row(
+      child: SingleChildScrollView(
+        child: Column(
             children: [
-              Expanded(
-                  flex: 5,
-                  child: Container(
-                    height: Get.height * 0.8,
-                    width: Get.width * 0.5,
-                    child: Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(defaultPadding),
-                          child: Row(
-                            children: [
-                              Text("My Files"),
-                              Expanded(child: SizedBox()),
-                              ElevatedButton.icon(
-                                  onPressed: () {},
-                                  icon: Icon(Icons.add),
-                                  label: Text("Add New"))
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  )),
-              SizedBox(
-                width: defaultPadding,
-              ),
-              ProjectStatus()
+        Padding(
+        padding: EdgeInsets.all(defaultPadding),
+        child: Header(),
+      ),
+      Row(
+        children: [
+          Expanded(
+              flex: 5,
+              child: Container(
+                height: Get.height * 0.8,
+                width: Get.width * 0.5,
+                child: Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(defaultPadding),
+                      child: Row(
+                        children: [
+                          Text("My Files"),
+                          Expanded(child: SizedBox()),
+                          ElevatedButton.icon(
+                              onPressed: () {},
+                              icon: Icon(Icons.add),
+                              label: Text("Add New"))
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              )),
+          SizedBox(
+            width: defaultPadding,
+          ),
+          ProjectStatus(), SizedBox(
+            height: defaultPadding,
+
+          ),
+          GridView.builder(
+            itemCount: 4,
+            shrinkWrap: true,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,crossAxisSpacing: defaultPadding), itemBuilder: (context, index) =>
+              Container(
+decoration: BoxDecoration(
+  color: secondaryColor
+
+),
+
+              )
+          )
+
             ],
           )
         ],
