@@ -54,7 +54,7 @@ class DashBoardScreen extends StatelessWidget {
             height: defaultPadding,
 
           ),
-          GridView.builder(
+          /*GridView.builder(
             itemCount: 4,
             shrinkWrap: true,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -66,7 +66,7 @@ decoration: BoxDecoration(
 ),
 
               )
-          )
+          )*/
 
             ],
           )
